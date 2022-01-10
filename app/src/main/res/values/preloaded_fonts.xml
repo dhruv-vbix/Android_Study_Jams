@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="preloaded_fonts" translatable="false">
+        <item>@font/anonymous_pro</item>
+        <item>@font/cinzel_decorative_black</item>
+        <item>@font/inknut_antiqua_black</item>
+        <item>@font/roboto_mono_light</item>
+    </array>
+</resources>

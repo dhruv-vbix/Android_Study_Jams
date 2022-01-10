@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navgraph"
+    app:startDestination="@id/homeFragment">
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.androidStudyJams.record_attendance.home.HomeFragment"
+        android:label="Home"
+        tools:layout="@layout/home_fragment">
+        <action
+            android:id="@+id/action_homeFragment_to_addDetailsFragment"
+            app:destination="@id/addDetailsFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_homeFragment_to_showItemFragment"
+            app:destination="@id/showItemFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/aboutFragment"
+        android:name="com.androidStudyJams.record_attendance.setting.SettingFragment"
+        android:label="About"
+        tools:layout="@layout/about_fragment" />
+    <fragment
+        android:id="@+id/addDetailsFragment"
+        android:name="com.androidStudyJams.record_attendance.add.AddDetailsFragment"
+        android:label="Add"
+        tools:layout="@layout/add_details_fragment">
+        <action
+            android:id="@+id/action_addDetailsFragment_to_absentPresentFragment"
+            app:destination="@id/absentPresentFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/absentPresentFragment"
+        android:name="com.androidStudyJams.record_attendance.add2.AbsentPresentFragment"
+        android:label="Save"
+        tools:layout="@layout/absent_present_fragment">
+        <argument
+            android:name="date"
+            app:argType="string" />
+        <argument
+            android:name="branch"
+            app:argType="string" />
+        <argument
+            android:name="lecture"
+            app:argType="string" />
+        <argument
+            android:name="sem"
+            app:argType="string" />
+        <argument
+            android:name="total"
+            app:argType="string" />
+        <argument
+            android:name="note"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_absentPresentFragment_to_homeFragment"
+            app:destination="@id/homeFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/showItemFragment"
+        android:name="com.androidStudyJams.record_attendance.showitem.ShowItemFragment"
+        android:label="Absent No"
+        tools:layout="@layout/show_item_fragment">
+        <argument
+            android:name="date"
+            app:argType="string" />
+        <argument
+            android:name="branch"
+            app:argType="string" />
+        <argument
+            android:name="lecture"
+            app:argType="string" />
+        <argument
+            android:name="absent"
+            app:argType="string" />
+        <argument
+            android:name="total"
+            app:argType="string" />
+        <argument
+            android:name="sem"
+            app:argType="string" />
+        <argument
+            android:name="note"
+            app:argType="string" />
+        <argument
+            android:name="id"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_showItemFragment_to_homeFragment"
+            app:destination="@id/homeFragment"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_right"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+</navigation>
